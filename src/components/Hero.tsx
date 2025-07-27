@@ -47,7 +47,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="/start-project"
-                className="group inline-flex items-center justify-center px-8 py-4 bg-foreground text-background font-medium rounded-none transition-all duration-300 hover:bg-primary"
+                className="group inline-flex items-center justify-center px-8 py-4 bg-primary text-background font-medium rounded-none transition-all duration-300 hover:bg-foreground "
               >
                 Start a Project
                 <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
