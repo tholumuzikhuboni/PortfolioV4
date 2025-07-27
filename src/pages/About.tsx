@@ -255,7 +255,7 @@ const AboutPage = () => {
             <div className="border border-border hover:border-primary/50 transition-colors">
               <img 
                 src="/lovable-uploads/6f8ec07f-8653-4ca1-a41f-483b20abb5c8.png" 
-                alt="GDG Johannesburg Event"
+                alt="Build With AI Johannesburg Speakers"
                 className="w-full h-64 object-cover"
               />
             </div>
@@ -263,7 +263,7 @@ const AboutPage = () => {
             <div className="border border-border hover:border-primary/50 transition-colors">
               <img 
                 src="/lovable-uploads/53162d06-b9e2-4d55-8cd7-a3e45b5dabf3.png" 
-                alt="Google Developer Group"
+                alt="Build With AI Johannesburg Speakers"
                 className="w-full h-64 object-cover"
               />
             </div>
@@ -271,7 +271,7 @@ const AboutPage = () => {
             <div className="border border-border hover:border-primary/50 transition-colors">
               <img 
                 src="/lovable-uploads/7575c590-2320-4fa6-8218-4968fdf230e5.png" 
-                alt="Tech Presentation"
+                alt="Build With AI Event"
                 className="w-full h-64 object-cover"
               />
             </div>
@@ -280,14 +280,6 @@ const AboutPage = () => {
               <img 
                 src="/lovable-uploads/f44fedc6-0977-402f-b14b-4f1bbe24608d.png" 
                 alt="Google Cloud"
-                className="w-full h-64 object-cover"
-              />
-            </div>
-
-            <div className="border border-border hover:border-primary/50 transition-colors">
-              <img 
-                src="/lovable-uploads/7d021eec-0d24-4839-bdf1-2fa40cfee2b9.png" 
-                alt="Meta Event"
                 className="w-full h-64 object-cover"
               />
             </div>
@@ -312,14 +304,6 @@ const AboutPage = () => {
               <img 
                 src="/lovable-uploads/b462ee0f-491c-4693-acba-e37673a84c55.png" 
                 alt="Home Office"
-                className="w-full h-64 object-cover"
-              />
-            </div>
-
-            <div className="border border-border hover:border-primary/50 transition-colors">
-              <img 
-                src="/lovable-uploads/aad47795-ff00-4439-998a-3938cc287170.png" 
-                alt="Industry Events"
                 className="w-full h-64 object-cover"
               />
             </div>
