@@ -3,8 +3,8 @@ import { Calendar, MapPin, Users, Mic } from 'lucide-react';
 
 const ProfessionalHighlights = () => {
   const gallery = [
-    { src: '/lovable-uploads/a1c67130-83c7-4282-9967-f0f1a737e7db.png', alt: 'GDG Johannesburg Build with AI Event - Group Photo' },
-    { src: '/lovable-uploads/cb5670bf-3812-445c-9410-a533b3583b94.png', alt: 'GDG Johannesburg Build with AI Event - Team Recognition' },
+    { src: '/lovable-uploads/a1c67130-83c7-4282-9967-f0f1a737e7db.png', alt: 'GDG Johannesburg Build with AI Event - Speakers' },
+    { src: '/lovable-uploads/cb5670bf-3812-445c-9410-a533b3583b94.png', alt: 'GDG Johannesburg Build with AI Event - Speakers' },
     { src: '/lovable-uploads/7fc0ae5a-ff0d-4dc4-a9d0-8bf9a77aaad9.png', alt: 'Speaking at Build with AI Event' },
   ];
 
