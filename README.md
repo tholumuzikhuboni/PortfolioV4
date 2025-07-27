@@ -16,7 +16,7 @@ To get this project running on your local machine, follow these steps:
 
 2.  Navigate into the newly created project folder:
     ```bash
-    cd artcraft-for-kids
+    cd PortfolioV4
     ```
 
 3.  Install the project dependencies:
