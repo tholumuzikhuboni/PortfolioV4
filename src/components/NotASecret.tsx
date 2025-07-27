@@ -56,7 +56,7 @@ const NotASecret = () => {
                 <div className="w-4 h-4 bg-secondary rounded-full flex items-center justify-center">
                   <span className="text-xs font-bold text-secondary-foreground">!</span>
                 </div>
-                <span className="text-muted-foreground">Creating World-Changing Solutions</span>
+                <span className="text-muted-foreground">World-Changing Solutions</span>
               </div>
               <p className="text-sm text-muted-foreground mt-3 leading-relaxed max-w-lg">
                 I am still inspired by Bill Gates to this day. My goal is to create innovative solutions 
