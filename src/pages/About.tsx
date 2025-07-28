@@ -270,7 +270,7 @@ const AboutPage = () => {
 
             <div className="border border-border hover:border-primary/50 transition-colors">
               <img 
-                src="/lovable-uploads/7575c590-2320-4fa6-8218-4968fdf230e5.png" 
+                src="/lovable-uploads/IMG_2365.JPG" 
                 alt="Build With AI Event"
                 className="w-full h-64 object-cover"
               />
@@ -288,14 +288,6 @@ const AboutPage = () => {
               <img 
                 src="/lovable-uploads/7ee6cba4-e729-4649-9dc7-4bdc990ded10.png" 
                 alt="Professional Development"
-                className="w-full h-64 object-cover"
-              />
-            </div>
-
-            <div className="border border-border hover:border-primary/50 transition-colors">
-              <img 
-                src="/lovable-uploads/72554f76-9404-42cb-a792-717c7a405017.png" 
-                alt="Work Environment"
                 className="w-full h-64 object-cover"
               />
             </div>
