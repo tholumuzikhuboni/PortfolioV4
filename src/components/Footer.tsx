@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaInstagram, FaTiktok, FaXTwitter } from 'react-icons/fa6';
+import { FaGithub, FaLinkedin, FaInstagram, FaTiktok, FaXTwitter, FaWhatsapp } from 'react-icons/fa6'; // Added FaWhatsapp
 
 const Footer = () => {
   return (
@@ -16,8 +16,8 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Code Snippet Section & Social Links (New Position) */}
-          <div className="space-y-8"> {/* Increased space here to separate code snippet and social links */}
+          {/* Code Snippet Section & Social Links */}
+          <div className="space-y-8">
             <div className="space-y-4">
               <h3 className="text-xl font-bold font-mono text-foreground">
                 Current Status
@@ -48,12 +48,12 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Social Links Section - NEW POSITION */}
+            {/* Social Links Section */}
             <div className="space-y-4">
                 <h3 className="text-xl font-bold font-mono text-foreground">
                     Connect
                 </h3>
-                <div className="flex space-x-4"> {/* Adjusted spacing for circular buttons */}
+                <div className="flex space-x-4">
                     <a
                         href="https://github.com/tholumuzikhuboni"
                         target="_blank"
@@ -61,7 +61,7 @@ const Footer = () => {
                         aria-label="GitHub"
                         className="flex items-center justify-center w-10 h-10 rounded-full bg-muted text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-200 border border-border"
                     >
-                        <FaGithub size={18} /> {/* Smaller icon size */}
+                        <FaGithub size={18} />
                     </a>
                     <a
                         href="https://linkedin.com/in/tholumuzikhuboni"
@@ -70,7 +70,7 @@ const Footer = () => {
                         aria-label="LinkedIn"
                         className="flex items-center justify-center w-10 h-10 rounded-full bg-muted text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-200 border border-border"
                     >
-                        <FaLinkedin size={18} /> {/* Smaller icon size */}
+                        <FaLinkedin size={18} />
                     </a>
                     <a
                         href="https://instagram.com/tholumuzikhuboni"
@@ -79,7 +79,7 @@ const Footer = () => {
                         aria-label="Instagram"
                         className="flex items-center justify-center w-10 h-10 rounded-full bg-muted text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-200 border border-border"
                     >
-                        <FaInstagram size={18} /> {/* Smaller icon size */}
+                        <FaInstagram size={18} />
                     </a>
                     <a
                         href="https://tiktok.com/@kuboni"
@@ -88,7 +88,7 @@ const Footer = () => {
                         aria-label="TikTok"
                         className="flex items-center justify-center w-10 h-10 rounded-full bg-muted text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-200 border border-border"
                     >
-                        <FaTiktok size={18} /> {/* Smaller icon size */}
+                        <FaTiktok size={18} />
                     </a>
                     <a
                         href="https://x.com/tholumuzikuboni"
@@ -97,7 +97,16 @@ const Footer = () => {
                         aria-label="X (formerly Twitter)"
                         className="flex items-center justify-center w-10 h-10 rounded-full bg-muted text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-200 border border-border"
                     >
-                        <FaXTwitter size={18} /> {/* Smaller icon size */}
+                        <FaXTwitter size={18} />
+                    </a>
+                    <a
+                        href="https://wa.me/27608941029"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="WhatsApp"
+                        className="flex items-center justify-center w-10 h-10 rounded-full bg-muted text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-200 border border-border"
+                    >
+                        <FaWhatsapp size={18} />
                     </a>
                 </div>
             </div>
@@ -106,7 +115,7 @@ const Footer = () => {
 
         {/* Bottom Section - Copyright */}
         <div className="mt-12 pt-8 pb-8 border-t border-border">
-          <div className="flex flex-col md:flex-row md:justify-between items-center space-y-4 md:space-y-0">
+          <div className="flex flex-col md:flex-row md:justify-between space-y-4 md:space-y-0">
             <div className="text-muted-foreground font-mono text-sm">
               © {new Date().getFullYear()} Built by Tholumuzi Kuboni.
             </div>
