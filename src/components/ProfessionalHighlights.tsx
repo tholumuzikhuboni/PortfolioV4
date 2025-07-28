@@ -44,7 +44,7 @@ const ProfessionalHighlights = () => {
                 </div>
                 <div className="flex items-center space-x-2">
                   <MapPin className="w-4 h-4 text-muted-foreground" />
-                  <span className="text-sm text-muted-foreground">Build With AI Event</span>
+                  <span className="text-sm text-muted-foreground">Build With AI - GDG Johannesburg</span>
                 </div>
               </div>
               <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed">
