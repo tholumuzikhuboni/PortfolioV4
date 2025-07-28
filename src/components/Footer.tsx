@@ -1,7 +1,8 @@
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-background via-background to-secondary/10 border-t border-border">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+      {/* Changed py-16 to pt-16 and adjusted bottom padding on the copyright section */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-16">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Brand Section */}
           <div className="space-y-6">
@@ -51,10 +52,10 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-12 pt-8 border-t border-border">
+        <div className="mt-12 pt-8 pb-8 border-t border-border"> 
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-muted-foreground font-mono text-sm">
-              © {new Date().getFullYear()} Tholumuzi Kuboni. All rights reserved.
+              © {new Date().getFullYear()} Built by Tholumuzi Kuboni.
             </div>
           </div>
         </div>
