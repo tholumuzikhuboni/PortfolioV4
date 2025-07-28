@@ -262,8 +262,8 @@ const AboutPage = () => {
 
             <div className="border border-border hover:border-primary/50 transition-colors">
               <img 
-                src="/lovable-uploads/53162d06-b9e2-4d55-8cd7-a3e45b5dabf3.png" 
-                alt="Build With AI Johannesburg Speakers"
+                src="/lovable-uploads/IMG_2381.JPG" 
+                alt="Tholumuzi & Simphiwe - Build With AI Speakers"
                 className="w-full h-64 object-cover"
               />
             </div>
