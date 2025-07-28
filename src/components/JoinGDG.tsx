@@ -13,7 +13,7 @@ const JoinGDG = () => {
               <span className="block text-primary italic">GDG Johannesburg</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
-              I actively promote and support developer communities such as GDG Johannesburg, where I engage with fellow developers, share knowledge, and contribute to events that grow tech in Africa. Join, Participate and Connect with like-minded individuals at GDD Johannesburg.
+              I actively promote and support developer communities such as GDG Johannesburg, where I engage with fellow developers, share knowledge, and contribute to events that grow tech in Africa.
             </p>
           </div>
 
