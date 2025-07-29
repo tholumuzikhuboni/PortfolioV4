@@ -3,7 +3,7 @@ import { Calendar, MapPin, Users, Mic } from 'lucide-react';
 
 const ProfessionalHighlights = () => {
   const gallery = [
-    { src: '/lovable-uploads/a1c67130-83c7-4282-9967-f0f1a737e7db.png', alt: 'GDG Johannesburg Build with AI Event - Speakers' },
+    { src: '/lovable-uploads/IMG_2341.JPG', alt: 'GDG Johannesburg Build with AI Event' },
     { src: '/lovable-uploads/IMG_2381.JPG', alt: 'Tholumuzi & Simphiwe - Speakers' },
     { src: '/lovable-uploads/IMG_2365.JPG', alt: 'At Build with AI Event' },
   ];
