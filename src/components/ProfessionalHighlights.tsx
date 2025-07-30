@@ -5,10 +5,9 @@ const ProfessionalHighlights = () => {
   const gallery = [
     { 
       type: 'video', 
-      // ✅ Corrected YouTube embed URL
       src: 'https://www.youtube.com/embed/dACYKyzafUc', 
       alt: 'GDG Johannesburg Build with AI Event - Featured Talk',
-      title: 'From Localhost to Getting Hired: Shipping Projects that Actually Matter'
+      title: 'Build With AI Johannesburg Recap'
     }, 
     { type: 'image', src: '/lovable-uploads/IMG_2381.JPG', alt: 'Tholumuzi & Simphiwe - Speakers' },
     { type: 'image', src: '/lovable-uploads/IMG_2365.JPG', alt: 'At Build with AI Event' },
@@ -73,28 +72,31 @@ const ProfessionalHighlights = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {gallery.map((item, index) => (
               <div key={index} className="group relative overflow-hidden border-2 border-border hover:border-primary/50 transition-all duration-300">
-                <div className="aspect-[4/3] overflow-hidden bg-black flex items-center justify-center">
+                {/* Container for aspect ratio. Using `relative` here for absolute positioning of iframe. */}
+                <div className="relative pt-[56.25%] bg-black flex items-center justify-center"> {/* pt-[56.25%] creates a 16:9 aspect ratio (9/16 * 100%) */}
                   {item.type === 'video' ? (
                     <iframe
-                      src={item.src} // Now using the correct embed URL
+                      src={item.src}
                       title={item.title}
                       frameBorder="0"
-                      // Important: Ensure 'autoplay' is used cautiously as it can be disruptive.
-                      // 'encrypted-media' is often good practice for video embeds.
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
-                      className="w-full h-full"
+                      // Position iframe absolutely to fill the padded parent
+                      className="absolute top-0 left-0 w-full h-full" 
                     ></iframe>
                   ) : (
                     <img 
                       src={item.src} 
                       alt={item.alt}
-                      className="w-full h-full object-cover"
+                      className="absolute top-0 left-0 w-full h-full object-cover" // Also apply absolute positioning for images
                     />
                   )}
                 </div>
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {/* Overlay that darkens on hover, but doesn't block clicks by default */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 pointer-events-none"></div>
+                
+                {/* Caption that appears on hover, also with pointer-events-none */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                   <p className="text-white text-sm font-mono">{item.alt}</p>
                 </div>
               </div>
