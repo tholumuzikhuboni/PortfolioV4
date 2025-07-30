@@ -5,10 +5,11 @@ const ProfessionalHighlights = () => {
   const gallery = [
     { 
       type: 'video', 
-      src: 'https://youtu.be/dACYKyzafUc?si=bxLGk0lR_jRf9wmi', 
+      // ✅ Corrected YouTube embed URL
+      src: 'https://www.youtube.com/embed/dACYKyzafUc', 
       alt: 'GDG Johannesburg Build with AI Event - Featured Talk',
       title: 'From Localhost to Getting Hired: Shipping Projects that Actually Matter'
-    }, // Changed to video
+    }, 
     { type: 'image', src: '/lovable-uploads/IMG_2381.JPG', alt: 'Tholumuzi & Simphiwe - Speakers' },
     { type: 'image', src: '/lovable-uploads/IMG_2365.JPG', alt: 'At Build with AI Event' },
   ];
@@ -70,17 +71,19 @@ const ProfessionalHighlights = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {gallery.map((item, index) => ( // Changed 'image' to 'item' for broader use
+            {gallery.map((item, index) => (
               <div key={index} className="group relative overflow-hidden border-2 border-border hover:border-primary/50 transition-all duration-300">
-                <div className="aspect-[4/3] overflow-hidden bg-black flex items-center justify-center"> {/* Added bg-black and flex for video */}
+                <div className="aspect-[4/3] overflow-hidden bg-black flex items-center justify-center">
                   {item.type === 'video' ? (
                     <iframe
-                      src={item.src}
-                      title={item.title} // Use the title from the item
+                      src={item.src} // Now using the correct embed URL
+                      title={item.title}
                       frameBorder="0"
+                      // Important: Ensure 'autoplay' is used cautiously as it can be disruptive.
+                      // 'encrypted-media' is often good practice for video embeds.
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
-                      className="w-full h-full" // Ensure iframe fills the container
+                      className="w-full h-full"
                     ></iframe>
                   ) : (
                     <img 
