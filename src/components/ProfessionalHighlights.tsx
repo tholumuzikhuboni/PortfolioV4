@@ -3,9 +3,14 @@ import { Calendar, MapPin, Users, Mic } from 'lucide-react';
 
 const ProfessionalHighlights = () => {
   const gallery = [
-    { src: '/lovable-uploads/IMG_2341.JPG', alt: 'GDG Johannesburg Build with AI Event' },
-    { src: '/lovable-uploads/IMG_2381.JPG', alt: 'Tholumuzi & Simphiwe - Speakers' },
-    { src: '/lovable-uploads/IMG_2365.JPG', alt: 'At Build with AI Event' },
+    { 
+      type: 'video', 
+      src: 'https://youtu.be/dACYKyzafUc?si=bxLGk0lR_jRf9wmi', 
+      alt: 'GDG Johannesburg Build with AI Event - Featured Talk',
+      title: 'From Localhost to Getting Hired: Shipping Projects that Actually Matter'
+    }, // Changed to video
+    { type: 'image', src: '/lovable-uploads/IMG_2381.JPG', alt: 'Tholumuzi & Simphiwe - Speakers' },
+    { type: 'image', src: '/lovable-uploads/IMG_2365.JPG', alt: 'At Build with AI Event' },
   ];
 
   return (
@@ -65,18 +70,29 @@ const ProfessionalHighlights = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {gallery.map((image, index) => (
+            {gallery.map((item, index) => ( // Changed 'image' to 'item' for broader use
               <div key={index} className="group relative overflow-hidden border-2 border-border hover:border-primary/50 transition-all duration-300">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img 
-                    src={image.src} 
-                    alt={image.alt}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="aspect-[4/3] overflow-hidden bg-black flex items-center justify-center"> {/* Added bg-black and flex for video */}
+                  {item.type === 'video' ? (
+                    <iframe
+                      src={item.src}
+                      title={item.title} // Use the title from the item
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full" // Ensure iframe fills the container
+                    ></iframe>
+                  ) : (
+                    <img 
+                      src={item.src} 
+                      alt={item.alt}
+                      className="w-full h-full object-cover"
+                    />
+                  )}
                 </div>
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-white text-sm font-mono">{image.alt}</p>
+                  <p className="text-white text-sm font-mono">{item.alt}</p>
                 </div>
               </div>
             ))}
