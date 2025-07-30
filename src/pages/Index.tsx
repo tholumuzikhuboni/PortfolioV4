@@ -7,6 +7,8 @@ import NotASecret from '@/components/NotASecret';
 import FeaturedProjects from '@/components/FeaturedProjects';
 import JoinGDG from '@/components/JoinGDG';
 import GetInTouch from '@/components/GetInTouch';
+import WhatIDo from '@/components/WhatIDo';
+import DayInLife from '@/components/DayInLife';
 import { FaReact, FaJs, FaPython, FaCss3Alt } from 'react-icons/fa';
 import { SiTypescript, SiFirebase, SiTailwindcss, SiAngular, SiGooglecloud, SiMysql } from 'react-icons/si';
 
@@ -17,9 +19,9 @@ const Index = () => {
       <Hero />
       
       {/* Technologies I Use */}
-      <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 animate-fade-in-up">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+          <div className="mb-16 animate-slide-in-left">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-none mb-6">
               <span className="block text-foreground">Technologies</span>
               <span className="block text-foreground">I</span>
@@ -42,22 +44,41 @@ const Index = () => {
               { name: 'Firebase', icon: SiFirebase, color: 'text-orange-500' },
               { name: 'GCP', icon: SiGooglecloud, color: 'text-blue-500' },
               { name: 'TailwindCSS', icon: SiTailwindcss, color: 'text-cyan-500' },
-            ].map((tech) => (
-              <div key={tech.name} className="group p-4 border border-border hover:border-primary/50 transition-colors text-center">
-                <tech.icon className={`w-8 h-8 mx-auto mb-2 ${tech.color} group-hover:scale-110 transition-transform`} />
-                <div className="text-xs text-muted-foreground font-medium">{tech.name}</div>
+            ].map((tech, index) => (
+              <div 
+                key={tech.name} 
+                className="group p-4 border border-border hover:border-primary/50 transition-all duration-300 text-center hover:shadow-lg hover:scale-105 animate-scale-in"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <tech.icon className={`w-8 h-8 mx-auto mb-2 ${tech.color} group-hover:scale-125 group-hover:rotate-12 transition-all duration-300`} />
+                <div className="text-xs text-muted-foreground font-medium group-hover:text-foreground transition-colors">{tech.name}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
       
-      <Education />
-      <ProfessionalHighlights />
-      <FeaturedProjects />
-      <NotASecret />
-      <JoinGDG />
-      <GetInTouch />
+      <WhatIDo />
+      <DayInLife />
+      
+      <div className="animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+        <Education />
+      </div>
+      <div className="animate-slide-in-right" style={{ animationDelay: '0.4s' }}>
+        <ProfessionalHighlights />
+      </div>
+      <div className="animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+        <FeaturedProjects />
+      </div>
+      <div className="animate-slide-in-left" style={{ animationDelay: '0.6s' }}>
+        <NotASecret />
+      </div>
+      <div className="animate-scale-in" style={{ animationDelay: '0.7s' }}>
+        <JoinGDG />
+      </div>
+      <div className="animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+        <GetInTouch />
+      </div>
       
       <Footer />
     </div>
