@@ -24,7 +24,6 @@ const Navbar = () => {
   const [language, setLanguage] = useState('en');
   const location = useLocation();
 
-  // Theme options
   const themes = [
     { name: 'Default', value: 'default', color: 'hsl(120, 60%, 40%)' },
     { name: 'Ocean', value: 'ocean', color: 'hsl(200, 100%, 50%)' },
@@ -40,7 +39,6 @@ const Navbar = () => {
     { name: 'German', value: 'de', flag: '🇩🇪' },
   ];
 
-  // Load saved preferences
   useEffect(() => {
     const savedThemeMode = localStorage.getItem('themeMode') as 'light' | 'dark' | 'system' || 'system';
     const savedTheme = localStorage.getItem('currentTheme') || 'default';
@@ -52,7 +50,6 @@ const Navbar = () => {
     setFontSize(savedFontSize);
     setLanguage(savedLanguage);
 
-    // Apply saved settings
     applyThemeMode(savedThemeMode);
     changeTheme(savedTheme);
     changeFontSize(savedFontSize);
@@ -141,7 +138,6 @@ const Navbar = () => {
           </DropdownMenuLabel>
           
           <div className="p-3 space-y-3">
-            {/* Theme Mode */}
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 {themeMode === 'dark' ? <Moon className="h-2.5 w-2.5 text-primary" /> : 
@@ -176,7 +172,6 @@ const Navbar = () => {
 
             <DropdownMenuSeparator className="bg-border/40" />
 
-            {/* Theme Colors */}
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <Palette className="h-2.5 w-2.5 text-primary" />
@@ -205,7 +200,6 @@ const Navbar = () => {
 
             <DropdownMenuSeparator className="bg-border/40" />
 
-            {/* Font Size */}
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <Type className="h-2.5 w-2.5 text-primary" />
@@ -242,7 +236,6 @@ const Navbar = () => {
       );
     }
 
-    // Desktop version
     return (
       <DropdownMenuContent 
         className="w-64 bg-background border border-border shadow-lg z-50 rounded-none font-mono" 
@@ -343,16 +336,13 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="text-xl font-bold font-mono text-primary">
               &lt;TK /&gt;
             </Link>
           </div>
 
-          {/* Settings & Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4">
-            {/* Settings Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="icon" className="h-10 w-10">
@@ -362,7 +352,6 @@ const Navbar = () => {
               <SettingsDropdown />
             </DropdownMenu>
 
-            {/* Navigation Menu */}
             <div className="flex items-baseline space-x-2">
               {navItems.map((item) => (
                 <Link
@@ -383,19 +372,16 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Mobile Settings & Menu */}
           <div className="md:hidden flex items-center space-x-2">
-            {/* Mobile Settings Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="h-12 w-12">
-                  <Settings className="h-8 w-8" />
+                <Button variant="ghost" size="icon" className="h-16 w-16">
+                  <Settings className="h-10 w-10" />
                 </Button>
               </DropdownMenuTrigger>
               <SettingsDropdown isMobile />
             </DropdownMenu>
 
-            {/* Mobile hamburger menu */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-foreground hover:text-primary transition-colors duration-300"
@@ -421,7 +407,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         <div className={`md:hidden transition-all duration-300 ease-in-out ${
           isMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
         } overflow-hidden`}>
