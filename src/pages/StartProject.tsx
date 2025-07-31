@@ -109,7 +109,7 @@ const StartProject = () => {
                 {/* Description */}
                 <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
                   Are you ready to bring your vision to life? I am a Senior Software Engineer & IT Professional, I specialize in creating secure, scalable solutions 
-                  that drive real business results. Let's discuss your project, business needs and make it happen in a fun and rewarding adventure.
+                  that drive real business results. Let's discuss your project, business needs and make it happen!
                 </p>
               </div>
 
@@ -139,7 +139,7 @@ const StartProject = () => {
                   <div className="text-sm text-muted-foreground">Years Experience</div>
                 </div>
                 <div className="group hover:scale-110 transition-transform duration-300">
-                  <div className="text-2xl font-bold text-foreground">50+</div>
+                  <div className="text-2xl font-bold text-foreground">15+</div>
                   <div className="text-sm text-muted-foreground">Projects Delivered</div>
                 </div>
                 <div className="group hover:scale-110 transition-transform duration-300">
