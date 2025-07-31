@@ -375,7 +375,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center space-x-2">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Settings className="h-10 w-10 cursor-pointer text-foreground hover:text-primary transition-colors duration-300" />
+                <Settings className="h-8 w-8 cursor-pointer text-foreground hover:text-primary transition-colors duration-300" />
               </DropdownMenuTrigger>
               <SettingsDropdown isMobile />
             </DropdownMenu>
