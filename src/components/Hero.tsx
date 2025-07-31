@@ -17,39 +17,39 @@ Const Hero = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-12 gap-8 items-center min-h-screen py-20">
           
-          {/* Left Content with removed staggered text animations */}
+          {/* Left Content with staggered animations */}
           <div className="lg:col-span-7 space-y-8">
             <div className="space-y-6">
-              {/* Small intro with removed slide animation */}
-              <div className="inline-block"> {/* Removed animate-slide-in-left */}
+              {/* Small intro with slide animation */}
+              <div className="inline-block animate-slide-in-left">
                 <span className="text-sm font-medium text-muted-foreground tracking-wider uppercase">
                   Software Engineer
                 </span>
                 <div className="w-16 h-0.5 bg-primary mt-2 animate-shimmer"></div>
               </div>
 
-              {/* Main heading with removed staggered text animations */}
+              {/* Main heading with staggered text animations */}
               <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-none">
-                <span className="block text-foreground">Building</span> {/* Removed animate-slide-in-left and style={{ animationDelay: '0.2s' }} */}
-                <span className="block text-foreground">the</span> {/* Removed animate-slide-in-left and style={{ animationDelay: '0.4s' }} */}
-                <span className="block text-primary italic">Future</span> {/* Removed animate-slide-in-left animate-glow and style={{ animationDelay: '0.6s' }} */}
+                <span className="block text-foreground animate-slide-in-left" style={{ animationDelay: '0.2s' }}>Building</span>
+                <span className="block text-foreground animate-slide-in-left" style={{ animationDelay: '0.4s' }}>the</span>
+                <span className="block text-primary italic animate-slide-in-left animate-glow" style={{ animationDelay: '0.6s' }}>Future</span>
               </h1>
 
-              {/* Name with removed fade-in animation */}
-              <div className="pl-4 border-l-4 border-accent"> {/* Removed animate-fade-in-up and style={{ animationDelay: '0.8s' }} */}
+              {/* Name with fade-in animation */}
+              <div className="pl-4 border-l-4 border-accent animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
                 <p className="text-xl text-muted-foreground font-light">I'm</p>
                 <p className="text-3xl font-bold text-foreground">Tholumuzi Kuboni</p>
               </div>
 
-              {/* Description with removed delayed fade-in */}
-              <p className="text-lg text-muted-foreground max-w-lg leading-relaxed"> {/* Removed animate-fade-in-up and style={{ animationDelay: '1s' }} */}
+              {/* Description with delayed fade-in */}
+              <p className="text-lg text-muted-foreground max-w-lg leading-relaxed animate-fade-in-up" style={{ animationDelay: '1s' }}>
                 A passionate software engineer specializing in secure, scalable solutions. 
                 Leading teams and driving innovation through clean code and strategic thinking.
               </p>
             </div>
 
-            {/* Action Buttons with removed fade-in animation */}
-            <div className="flex flex-col sm:flex-row gap-4"> {/* Removed animate-fade-in-up and style={{ animationDelay: '1.2s' }} */}
+            {/* Action Buttons with hover animations */}
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: '1.2s' }}>
               <a
                 href="/start-project"
                 className="group inline-flex items-center justify-center px-8 py-4 bg-primary text-background font-medium rounded-none transition-all duration-300 hover:bg-primary hover:scale-105 hover:shadow-lg"
@@ -67,8 +67,8 @@ Const Hero = () => {
               </a>
             </div>
 
-            {/* Stats with removed fade-in animation */}
-            <div className="grid grid-cols-3 gap-8 pt-8"> {/* Removed animate-fade-in-up and style={{ animationDelay: '1.4s' }} */}
+            {/* Stats with count-up effect simulation */}
+            <div className="grid grid-cols-3 gap-8 pt-8 animate-fade-in-up" style={{ animationDelay: '1.4s' }}>
               <div className="group hover:scale-110 transition-transform duration-300">
                 <div className="text-2xl font-bold text-foreground">2+</div>
                 <div className="text-sm text-muted-foreground">Years Experience</div>
@@ -84,7 +84,7 @@ Const Hero = () => {
             </div>
           </div>
 
-          {/* Right Content - Enhanced Visual Element (TK Card animations removed) */}
+          {/* Right Content - Enhanced Visual Element */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <div className="relative animate-scale-in" style={{ animationDelay: '1.6s' }}>
               {/* Main Visual Block with enhanced animations */}
@@ -96,17 +96,17 @@ Const Hero = () => {
                 <div className="absolute -top-4 -right-4 w-20 h-20 border-4 border-background bg-accent animate-float-fast hover:rotate-180 transition-transform duration-500"></div>
                 <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-primary animate-bounce-gentle hover:scale-125 transition-transform duration-300"></div>
                 
-                {/* Content inside the block with removed glow effect and inner element animations */}
+                {/* Content inside the block with glow effect */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center text-white">
-                    <div className="text-4xl font-bold mb-2">TK</div> {/* Removed animate-pulse */}
+                    <div className="text-4xl font-bold mb-2 animate-pulse">TK</div>
                     <div className="text-sm tracking-wider">SOFTWARE ENGINEER</div>
                   </div>
                 </div>
 
-                {/* New animated inner elements (animations removed) */}
-                <div className="absolute top-4 left-4 w-2 h-2 bg-white/30 rounded-full"></div> {/* Removed animate-ping */}
-                <div className="absolute bottom-4 right-4 w-3 h-3 bg-white/40"></div> {/* Removed animate-bounce */}
+                {/* New animated inner elements */}
+                <div className="absolute top-4 left-4 w-2 h-2 bg-white/30 rounded-full animate-ping"></div>
+                <div className="absolute bottom-4 right-4 w-3 h-3 bg-white/40 animate-bounce"></div>
               </div>
 
               {/* Additional geometric elements with animations */}
@@ -121,7 +121,7 @@ Const Hero = () => {
         </div>
       </div>
 
-      {/* Enhanced scroll indicator (animation remains) */}
+      {/* Enhanced scroll indicator */}
       <div className="absolute bottom-8 left-8 animate-fade-in-up" style={{ animationDelay: '2s' }}>
         <div className="flex items-center space-x-2">
           <div className="w-6 h-10 border-2 border-muted-foreground rounded-full relative">
