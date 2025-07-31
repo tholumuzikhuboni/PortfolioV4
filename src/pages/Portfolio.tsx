@@ -163,7 +163,7 @@ const Portfolio = () => {
                 {/* Description */}
                 <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
                   Explore my latest projects from public repositories. Each project represents a journey of 
-                  learning and innovation, while most of my professional work remains in private repositories.
+                  learning and innovation, while most of my professional work remains private.
                 </p>
               </div>
 
