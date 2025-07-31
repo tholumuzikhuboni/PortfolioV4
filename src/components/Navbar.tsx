@@ -364,8 +364,9 @@ const Navbar = () => {
                   }`}
                 >
                   <span className="relative z-10">{item.name}</span>
-                  <span className={`absolute bottom-1 left-4 right-4 h-0.5 bg-gradient-to-r from-primary to-primary/60 transition-all duration-300 ${
-                    location.pathname === item.href ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'
+                  {/* Modified underline for desktop nav */}
+                  <span className={`absolute bottom-1 left-1/2 -translate-x-1/2 h-0.5 bg-gradient-to-r from-primary to-primary/60 transition-all duration-300 ${
+                    location.pathname === item.href ? 'opacity-100 w-1/2' : 'opacity-0 w-0 group-hover:opacity-100 group-hover:w-1/3'
                   }`}></span>
                   <div className={`absolute inset-0 rounded-md bg-gradient-to-r from-primary/5 to-primary/10 transition-all duration-300 ${
                     location.pathname === item.href ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
@@ -435,8 +436,9 @@ const Navbar = () => {
                     location.pathname === item.href ? 'opacity-100 scale-100' : 'opacity-0 scale-0 group-hover:opacity-50 group-hover:scale-100'
                   }`} />
                 </div>
-                <div className={`absolute bottom-2 left-4 right-4 h-0.5 bg-gradient-to-r from-primary to-primary/60 transition-all duration-300 ${
-                  location.pathname === item.href ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'
+                {/* Modified underline for mobile nav */}
+                <div className={`absolute bottom-2 left-1/2 -translate-x-1/2 h-0.5 bg-gradient-to-r from-primary to-primary/60 transition-all duration-300 ${
+                  location.pathname === item.href ? 'opacity-100 w-1/3' : 'opacity-0 w-0 group-hover:opacity-100 group-hover:w-1/4'
                 }`}></div>
               </Link>
             ))}
