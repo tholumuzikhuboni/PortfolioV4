@@ -108,8 +108,8 @@ const StartProject = () => {
 
                 {/* Description */}
                 <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
-                  Ready to bring your vision to life? I am a Senior Software Engineer & IT Professional, I specialize in creating secure, scalable solutions 
-                  that drive real business results. Let's discuss your project, business needs and make it happen.
+                  Are you ready to bring your vision to life? I am a Senior Software Engineer & IT Professional, I specialize in creating secure, scalable solutions 
+                  that drive real business results. Let's discuss your project, business needs and make it happen in a fun and rewarding adventure.
                 </p>
               </div>
 
