@@ -105,16 +105,7 @@ export default {
 					'0%, 50%': { borderColor: 'transparent' },
 					'51%, 100%': { borderColor: 'currentColor' }
 				},
-				'fade-in-up': {
-					'0%': {
-						opacity: '0',
-						transform: 'translateY(30px)'
-					},
-					'100%': {
-						opacity: '1',
-						transform: 'translateY(0)'
-					}
-				},
+				// Removed 'fade-in-up' keyframe
 				'fade-in-delayed': {
 					'0%': {
 						opacity: '0',
@@ -125,10 +116,7 @@ export default {
 						transform: 'translateY(0)'
 					}
 				},
-				'glow': {
-					'0%, 100%': { boxShadow: '0 0 20px hsl(var(--primary) / 0.1)' },
-					'50%': { boxShadow: '0 0 30px hsl(var(--primary) / 0.3)' }
-				},
+				// Removed 'glow' keyframe
 				'shimmer': {
 					'0%': { 
 						backgroundPosition: '200% 0',
@@ -166,10 +154,7 @@ export default {
 					'0%, 80%, 100%': { transform: 'translateY(0)' },
 					'40%': { transform: 'translateY(-8px)' }
 				},
-				'slide-in-left': {
-					'0%': { transform: 'translateX(-100%)', opacity: '0' },
-					'100%': { transform: 'translateX(0)', opacity: '1' }
-				},
+				// Removed 'slide-in-left' keyframe
 				'slide-in-right': {
 					'0%': { transform: 'translateX(100%)', opacity: '0' },
 					'100%': { transform: 'translateX(0)', opacity: '1' }
@@ -192,9 +177,9 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'typing': 'typing 3s steps(40, end)',
 				'blink': 'blink 1s infinite',
-				'fade-in-up': 'fade-in-up 0.8s ease-out',
+				// Removed 'fade-in-up' animation
 				'fade-in-delayed': 'fade-in-delayed 1s ease-out 0.5s both',
-				'glow': 'glow 2s ease-in-out infinite',
+				// Removed 'glow' animation
 				'shimmer': 'shimmer 2s ease-in-out infinite',
 				'shimmer-bar': 'shimmer-bar 1.5s ease-in-out infinite',
 				'float-slow': 'float-slow 6s ease-in-out infinite',
@@ -202,7 +187,7 @@ export default {
 				'float-fast': 'float-fast 3s ease-in-out infinite',
 				'bounce-gentle': 'bounce-gentle 2s ease-in-out infinite',
 				'bounce-dot': 'bounce-dot 1.4s ease-in-out infinite',
-				'slide-in-left': 'slide-in-left 0.6s ease-out',
+				// Removed 'slide-in-left' animation
 				'slide-in-right': 'slide-in-right 0.6s ease-out',
 				'scale-in': 'scale-in 0.5s ease-out',
 				'rotate-in': 'rotate-in 0.8s ease-out',
