@@ -1,4 +1,4 @@
-Const Hero = () => {
+const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Geometric Background Elements with animations */}
