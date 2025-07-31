@@ -333,8 +333,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-xl border-b border-border/50 shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <Link to="/" className="text-xl font-bold font-mono text-primary">
@@ -352,21 +352,24 @@ const Navbar = () => {
               <SettingsDropdown />
             </DropdownMenu>
 
-            <div className="flex items-baseline space-x-2">
+            <div className="flex items-center space-x-1">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`font-mono text-sm transition-all duration-300 relative group px-4 py-2 border border-transparent hover:border-primary/30 ${
+                  className={`font-mono text-sm transition-all duration-300 relative group px-4 py-2.5 rounded-md border border-transparent hover:border-primary/30 hover:shadow-sm ${
                     location.pathname === item.href 
-                      ? 'text-primary border-primary/50 bg-primary/5' 
-                      : 'text-foreground hover:text-primary hover:bg-primary/5'
+                      ? 'text-primary border-primary/50 bg-gradient-to-r from-primary/10 to-primary/5 shadow-md' 
+                      : 'text-foreground hover:text-primary hover:bg-gradient-to-r hover:from-primary/8 hover:to-primary/3'
                   }`}
                 >
-                  {item.name}
-                  <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
-                    location.pathname === item.href ? 'w-full' : 'w-0 group-hover:w-full'
+                  <span className="relative z-10">{item.name}</span>
+                  <span className={`absolute bottom-1 left-4 right-4 h-0.5 bg-gradient-to-r from-primary to-primary/60 transition-all duration-300 ${
+                    location.pathname === item.href ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'
                   }`}></span>
+                  <div className={`absolute inset-0 rounded-md bg-gradient-to-r from-primary/5 to-primary/10 transition-all duration-300 ${
+                    location.pathname === item.href ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                  }`}></div>
                 </Link>
               ))}
             </div>
@@ -382,9 +385,9 @@ const Navbar = () => {
               <SettingsDropdown isMobile />
             </DropdownMenu>
 
-            <button
+            <div
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center rounded-md text-foreground hover:text-primary transition-colors duration-300 h-10 w-10 group"
+              className="flex items-center justify-center text-foreground hover:text-primary transition-colors duration-300 h-10 w-10 group cursor-pointer"
             >
               <div className="w-6 h-6 relative flex flex-col justify-center items-center">
                 <span
@@ -402,31 +405,39 @@ const Navbar = () => {
                     isMenuOpen ? '-rotate-45 translate-y-0' : 'translate-y-2'
                   } group-hover:bg-primary`}
                 />
-                {/* Enhanced visual elements */}
-                <div className={`absolute inset-0 rounded-sm transition-all duration-300 ${
-                  isMenuOpen ? 'bg-primary/10 scale-110' : 'bg-transparent scale-100'
-                }`} />
               </div>
-            </button>
+            </div>
           </div>
         </div>
 
-        <div className={`md:hidden transition-all duration-300 ease-in-out ${
-          isMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
+        <div className={`md:hidden transition-all duration-500 ease-in-out ${
+          isMenuOpen ? 'max-h-80 opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-2'
         } overflow-hidden`}>
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-background border-t border-border">
-            {navItems.map((item) => (
+          <div className="px-2 pt-4 pb-6 space-y-2 bg-gradient-to-b from-background to-background/95 border-t border-border/50 backdrop-blur-sm">
+            {navItems.map((item, index) => (
               <Link
                 key={item.name}
                 to={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`font-mono block px-4 py-3 text-sm transition-all duration-300 border border-transparent hover:border-primary/30 ${
+                className={`font-mono group block px-4 py-4 text-sm transition-all duration-300 rounded-lg border border-transparent hover:border-primary/30 hover:shadow-lg transform hover:-translate-y-0.5 ${
                   location.pathname === item.href 
-                    ? 'text-primary border-primary/50 bg-primary/5' 
-                    : 'text-foreground hover:text-primary hover:bg-primary/5'
+                    ? 'text-primary border-primary/50 bg-gradient-to-r from-primary/15 to-primary/8 shadow-lg scale-[1.02]' 
+                    : 'text-foreground hover:text-primary hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary/5'
                 }`}
+                style={{
+                  animationDelay: `${index * 50}ms`,
+                  animation: isMenuOpen ? 'fade-in 0.3s ease-out forwards' : 'none'
+                }}
               >
-                {item.name}
+                <div className="flex items-center justify-between">
+                  <span className="relative z-10">{item.name}</span>
+                  <div className={`w-2 h-2 rounded-full bg-primary transition-all duration-300 ${
+                    location.pathname === item.href ? 'opacity-100 scale-100' : 'opacity-0 scale-0 group-hover:opacity-50 group-hover:scale-100'
+                  }`} />
+                </div>
+                <div className={`absolute bottom-2 left-4 right-4 h-0.5 bg-gradient-to-r from-primary to-primary/60 transition-all duration-300 ${
+                  location.pathname === item.href ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'
+                }`}></div>
               </Link>
             ))}
           </div>
