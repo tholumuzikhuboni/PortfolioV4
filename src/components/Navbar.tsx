@@ -378,8 +378,8 @@ const Navbar = () => {
                 <div
                   className="inline-flex items-center justify-center p-2 rounded-md text-foreground hover:text-primary transition-colors duration-300"
                 >
-                  {/* Settings icon reduced to h-4 w-4 */}
-                  <Settings className="h-4 w-4" /> 
+                  {/* Reduced Settings icon size */}
+                  <Settings className="h-5 w-5" /> 
                 </div>
               </DropdownMenuTrigger>
               <SettingsDropdown isMobile />
@@ -389,7 +389,7 @@ const Navbar = () => {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-foreground hover:text-primary transition-colors duration-300 h-10 w-10"
             >
-              <div className="w-5 h-5 relative">
+              <div className="w-5 h-5 relative"> {/* Reduced hamburger internal div size */}
                 <span
                   className={`absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out ${
                     isMenuOpen ? 'rotate-45 translate-y-2' : 'translate-y-0'
