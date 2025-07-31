@@ -375,9 +375,9 @@ const Navbar = () => {
           <div className="md:hidden flex items-center space-x-2">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                {/* Reverted to Button with matching h-10 w-10 for the button, and h-6 w-6 for the icon */}
                 <Button variant="ghost" size="icon" className="h-10 w-10">
-                  <Settings className="h-6 w-6" />
+                  {/* Adjusted Settings icon size to h-8 w-8 */}
+                  <Settings className="h-8 w-8" />
                 </Button>
               </DropdownMenuTrigger>
               <SettingsDropdown isMobile />
