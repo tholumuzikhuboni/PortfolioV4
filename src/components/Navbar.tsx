@@ -375,10 +375,12 @@ const Navbar = () => {
           <div className="md:hidden flex items-center space-x-2">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="h-10 w-10">
-                  {/* Adjusted Settings icon size to h-8 w-8 */}
-                  <Settings className="h-8 w-8" />
-                </Button>
+                {/* Replaced Button with a div that mimics the hamburger button's padding and centering */}
+                <div
+                  className="inline-flex items-center justify-center p-2 rounded-md text-foreground hover:text-primary transition-colors duration-300"
+                >
+                  <Settings className="h-6 w-6" /> {/* Icon size matches hamburger lines */}
+                </div>
               </DropdownMenuTrigger>
               <SettingsDropdown isMobile />
             </DropdownMenu>
