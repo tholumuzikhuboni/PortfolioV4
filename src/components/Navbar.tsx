@@ -375,9 +375,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center space-x-2">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="h-16 w-16">
-                  <Settings className="h-10 w-10" />
-                </Button>
+                <Settings className="h-10 w-10 cursor-pointer text-foreground hover:text-primary transition-colors duration-300" />
               </DropdownMenuTrigger>
               <SettingsDropdown isMobile />
             </DropdownMenu>
