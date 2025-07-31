@@ -375,36 +375,37 @@ const Navbar = () => {
           <div className="md:hidden flex items-center space-x-2">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <div
-                  className="inline-flex items-center justify-center p-2 rounded-md text-foreground hover:text-primary transition-colors duration-300"
-                >
+                <button className="inline-flex items-center justify-center rounded-md text-foreground hover:text-primary transition-colors duration-300 h-10 w-10">
                   <Settings className="h-6 w-6" />
-                </div>
+                </button>
               </DropdownMenuTrigger>
               <SettingsDropdown isMobile />
             </DropdownMenu>
 
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              // Added h-10 w-10 to explicitly match the settings icon's wrapper size
-              className="inline-flex items-center justify-center p-2 rounded-md text-foreground hover:text-primary transition-colors duration-300 h-10 w-10"
+              className="inline-flex items-center justify-center rounded-md text-foreground hover:text-primary transition-colors duration-300 h-10 w-10 group"
             >
-              <div className="w-6 h-6 relative">
+              <div className="w-6 h-6 relative flex flex-col justify-center items-center">
                 <span
-                  className={`absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out ${
-                    isMenuOpen ? 'rotate-45 translate-y-2.5' : 'translate-y-0'
-                  }`}
+                  className={`block absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out ${
+                    isMenuOpen ? 'rotate-45 translate-y-0' : '-translate-y-2'
+                  } group-hover:bg-primary`}
                 />
                 <span
-                  className={`absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out translate-y-2 ${
+                  className={`block absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out ${
                     isMenuOpen ? 'opacity-0' : 'opacity-100'
-                  }`}
+                  } group-hover:bg-primary`}
                 />
                 <span
-                  className={`absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out ${
-                    isMenuOpen ? '-rotate-45 translate-y-2.5' : 'translate-y-4'
-                  }`}
+                  className={`block absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out ${
+                    isMenuOpen ? '-rotate-45 translate-y-0' : 'translate-y-2'
+                  } group-hover:bg-primary`}
                 />
+                {/* Enhanced visual elements */}
+                <div className={`absolute inset-0 rounded-sm transition-all duration-300 ${
+                  isMenuOpen ? 'bg-primary/10 scale-110' : 'bg-transparent scale-100'
+                }`} />
               </div>
             </button>
           </div>
