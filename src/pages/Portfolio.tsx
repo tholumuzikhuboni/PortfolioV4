@@ -163,7 +163,7 @@ const Portfolio = () => {
                 {/* Description */}
                 <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
                   Explore my latest projects from public repositories. Each project represents a journey of 
-                  learning and innovation, while most of my professional work remains private.
+                  learning and innovation, while most of my professional work remains in private repositories.
                 </p>
               </div>
 
@@ -222,109 +222,105 @@ const Portfolio = () => {
         </div>
       </section>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="max-w-6xl mx-auto">
+          {/* GitHub Stats Section */}
+          <section className="py-12">
+            <div className="max-w-7xl mx-auto">
+              <div className="mb-12">
+                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-none mb-6">
+                  <span className="block text-foreground">My</span>
+                  <span className="block text-foreground">GitHub</span>
+                  <span className="block text-primary italic">Stats</span>
+                </h2>
+                <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
+                  Real-time statistics from my GitHub profile, showcasing my development activity
+                  and contribution patterns across various projects and technologies.
+                </p>
+              </div>
 
-          {/* Enhanced GitHub Stats Section */}
-          {user && (
-            <section className="py-20 bg-secondary/30 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 mb-20">
-              <div className="max-w-6xl mx-auto">
-                <div className="mb-16 animate-slide-in-left">
-                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-none mb-6">
-                    <span className="block text-foreground">GitHub</span>
-                    <span className="block text-foreground">Developer</span>
-                    <span className="block text-primary italic">Statistics</span>
-                  </h2>
-                  <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
-                    Real-time insights from my GitHub activity, showcasing collaboration, 
-                    code quality, and community engagement metrics.
-                  </p>
-                </div>
+              <div className="grid lg:grid-cols-2 gap-12 items-start">
+                {/* Left side - GitHub Stats */}
+                <div className="space-y-8 animate-slide-in-left">
+                  {user && (
+                    <>
+                      {/* Public Repositories */}
+                      <div className="pl-4 border-l-4 border-primary animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                        <p className="text-xl text-muted-foreground font-light">Public</p>
+                        <p className="text-3xl font-bold text-foreground">Repositories</p>
+                        <div className="flex items-center space-x-2 mt-2">
+                          <Github className="w-4 h-4 text-muted-foreground" />
+                          <span className="text-muted-foreground">{user.public_repos} repositories</span>
+                        </div>
+                        <p className="text-sm text-muted-foreground mt-3 leading-relaxed max-w-lg">
+                          A collection of public projects showcasing diverse technologies and 
+                          innovative solutions across different programming domains.
+                        </p>
+                      </div>
 
-                {/* Stats Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                  <div className="group p-6 border border-border hover:border-primary/50 transition-all duration-300 text-center hover:shadow-lg hover:scale-105 animate-scale-in bg-card" style={{ animationDelay: '0.1s' }}>
-                    <Database className="w-8 h-8 mx-auto mb-3 text-primary group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" />
-                    <div className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">{user.public_repos}</div>
-                    <div className="text-xs text-muted-foreground font-medium group-hover:text-foreground transition-colors">Public Repos</div>
-                  </div>
-
-                  <div className="group p-6 border border-border hover:border-primary/50 transition-all duration-300 text-center hover:shadow-lg hover:scale-105 animate-scale-in bg-card" style={{ animationDelay: '0.2s' }}>
-                    <Star className="w-8 h-8 mx-auto mb-3 text-accent group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" />
-                    <div className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
-                      {repos.reduce((total, repo) => total + repo.stargazers_count, 0)}
-                    </div>
-                    <div className="text-xs text-muted-foreground font-medium group-hover:text-foreground transition-colors">Total Stars</div>
-                  </div>
-
-                  <div className="group p-6 border border-border hover:border-primary/50 transition-all duration-300 text-center hover:shadow-lg hover:scale-105 animate-scale-in bg-card" style={{ animationDelay: '0.3s' }}>
-                    <GitFork className="w-8 h-8 mx-auto mb-3 text-primary/70 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" />
-                    <div className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
-                      {repos.reduce((total, repo) => total + repo.forks_count, 0)}
-                    </div>
-                    <div className="text-xs text-muted-foreground font-medium group-hover:text-foreground transition-colors">Total Forks</div>
-                  </div>
-
-                  <div className="group p-6 border border-border hover:border-primary/50 transition-all duration-300 text-center hover:shadow-lg hover:scale-105 animate-scale-in bg-card" style={{ animationDelay: '0.4s' }}>
-                    <Github className="w-8 h-8 mx-auto mb-3 text-accent/70 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" />
-                    <div className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">{user.followers}</div>
-                    <div className="text-xs text-muted-foreground font-medium group-hover:text-foreground transition-colors">Followers</div>
-                  </div>
-
-                  <div className="group p-6 border border-border hover:border-primary/50 transition-all duration-300 text-center hover:shadow-lg hover:scale-105 animate-scale-in bg-card" style={{ animationDelay: '0.5s' }}>
-                    <Code2 className="w-8 h-8 mx-auto mb-3 text-primary group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" />
-                    <div className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
-                      {repos.filter(repo => repo.language).length}
-                    </div>
-                    <div className="text-xs text-muted-foreground font-medium group-hover:text-foreground transition-colors">Languages</div>
-                  </div>
-
-                  <div className="group p-6 border border-border hover:border-primary/50 transition-all duration-300 text-center hover:shadow-lg hover:scale-105 animate-scale-in bg-card" style={{ animationDelay: '0.6s' }}>
-                    <Zap className="w-8 h-8 mx-auto mb-3 text-accent group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" />
-                    <div className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
-                      {repos.filter(repo => new Date(repo.updated_at) > new Date(Date.now() - 90 * 24 * 60 * 60 * 1000)).length}
-                    </div>
-                    <div className="text-xs text-muted-foreground font-medium group-hover:text-foreground transition-colors">Recent Updates</div>
-                  </div>
-                </div>
-
-                {/* Language Breakdown */}
-                <div className="mt-16 animate-fade-in-up">
-                  <h3 className="text-2xl font-bold leading-none mb-8">
-                    <span className="block text-foreground">Top</span>
-                    <span className="block text-primary italic">Languages</span>
-                  </h3>
-                  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                    {Array.from(new Set(repos.map(repo => repo.language).filter(Boolean)))
-                      .slice(0, 6)
-                      .map((language, index) => {
-                        const count = repos.filter(repo => repo.language === language).length;
-                        return (
-                          <div 
-                            key={language} 
-                            className="p-4 border border-border hover:border-primary/50 transition-all duration-300 text-center hover:scale-105 animate-scale-in bg-card/50"
-                            style={{ animationDelay: `${index * 100}ms` }}
-                          >
-                            <div className="w-3 h-3 bg-primary rounded-full mx-auto mb-2"></div>
-                            <div className="text-sm font-medium text-foreground">{language}</div>
-                            <div className="text-xs text-muted-foreground">{count} repos</div>
+                      {/* Community Stats */}
+                      <div className="pl-4 border-l-4 border-accent animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+                        <p className="text-xl text-muted-foreground font-light">Community</p>
+                        <p className="text-3xl font-bold text-foreground">Engagement</p>
+                        <div className="flex items-center space-x-4 mt-2">
+                          <div className="flex items-center space-x-1">
+                            <span className="text-muted-foreground">{user.followers} followers</span>
                           </div>
-                        );
-                      })}
+                          <div className="flex items-center space-x-1">
+                            <span className="text-muted-foreground">{user.following} following</span>
+                          </div>
+                        </div>
+                        <p className="text-sm text-muted-foreground mt-3 leading-relaxed max-w-lg">
+                          Active participation in the developer community through collaboration,
+                          knowledge sharing, and continuous learning initiatives.
+                        </p>
+                      </div>
+                    </>
+                  )}
+                </div>
+
+                {/* Right side - Visual Element */}
+                <div className="flex justify-center items-center mt-8 lg:mt-0 animate-slide-in-right">
+                  <div className="relative animate-scale-in" style={{ animationDelay: '0.6s' }}>
+                    {/* Main Visual Block */}
+                    <div className="w-72 h-80 bg-gradient-to-br from-primary/20 to-accent/20 border border-border relative">
+                      {/* GitHub Profile Content */}
+                      <div className="absolute inset-0 flex items-center justify-center p-8">
+                        <div className="text-center">
+                          <Github className="w-16 h-16 mx-auto mb-4 text-primary" />
+                          <p className="text-foreground font-mono text-lg leading-relaxed mb-2">
+                            @{username}
+                          </p>
+                          {user?.bio && (
+                            <p className="text-sm text-muted-foreground leading-relaxed">
+                              {user.bio}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                      
+                      {/* Floating Elements */}
+                      <div className="absolute -top-4 -right-4 w-16 h-16 bg-primary/10 border border-primary/30"></div>
+                      <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-accent/20 rotate-45"></div>
+                    </div>
+
+                    {/* Additional geometric elements */}
+                    <div className="absolute top-8 -left-6 w-3 h-3 bg-accent rotate-45"></div>
+                    <div className="absolute bottom-16 -right-4 w-4 h-4 border border-primary rounded-full"></div>
                   </div>
                 </div>
               </div>
-            </section>
-          )}
+            </div>
+          </section>
 
           {/* Projects Grid */}
-          <section className="py-20">
+          <section className="py-12">
             <div className="max-w-6xl mx-auto">
               <div className="mb-16 animate-slide-in-left">
                 <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-none mb-6">
                   <span className="block text-foreground">My</span>
-                  <span className="block text-foreground">Recent</span>
-                  <span className="block text-primary italic">Projects</span>
+                  <span className="block text-foreground">Public</span>
+                  <span className="block text-primary italic">Repos</span>
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
                   A curated selection of my latest public repositories, showcasing diverse technologies
