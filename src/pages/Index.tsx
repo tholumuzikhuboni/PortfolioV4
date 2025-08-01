@@ -9,10 +9,9 @@ import JoinGDG from '@/components/JoinGDG';
 import GetInTouch from '@/components/GetInTouch';
 import WhatIDo from '@/components/WhatIDo';
 import DayInLife from '@/components/DayInLife';
-import InteractiveCodeGame from '@/components/InteractiveCodeGame';
-import SoftwareKnowledgeQuiz from '@/components/SoftwareKnowledgeQuiz';
 import LiveTerminalSimulation from '@/components/LiveTerminalSimulation';
 import AnimatedStatsCounter from '@/components/AnimatedStatsCounter';
+import IdeaToLifeProcess from '@/components/IdeaToLifeProcess';
 import { FaReact, FaJs, FaPython, FaCss3Alt } from 'react-icons/fa';
 import { SiTypescript, SiFirebase, SiTailwindcss, SiAngular, SiGooglecloud, SiMysql } from 'react-icons/si';
 
@@ -63,6 +62,7 @@ const Index = () => {
       </section>
       
       <WhatIDo />
+      <IdeaToLifeProcess />
       <AnimatedStatsCounter />
       <DayInLife />
       <LiveTerminalSimulation />
@@ -82,8 +82,6 @@ const Index = () => {
       <div className="animate-scale-in" style={{ animationDelay: '0.7s' }}>
         <JoinGDG />
       </div>
-      <SoftwareKnowledgeQuiz />
-      <InteractiveCodeGame />
       <div className="animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
         <GetInTouch />
       </div>
