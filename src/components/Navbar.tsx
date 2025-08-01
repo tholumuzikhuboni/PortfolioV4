@@ -333,116 +333,130 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-xl border-b border-border/50 shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-2xl border-b border-border/30 shadow-lg">
+      {/* Animated top border */}
+      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent animate-pulse"></div>
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0">
-            <Link to="/" className="text-xl font-bold font-mono text-primary">
-              &lt;TK /&gt;
+          {/* Logo with enhanced styling */}
+          <div className="flex-shrink-0 group">
+            <Link 
+              to="/" 
+              className="relative inline-flex items-center text-xl font-bold font-mono text-primary hover:text-primary/80 transition-all duration-300 transform hover:scale-105"
+            >
+              <span className="relative">
+                &lt;TK /&gt;
+                <div className="absolute -inset-2 bg-primary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 blur-sm"></div>
+              </span>
             </Link>
           </div>
 
-          <div className="hidden md:flex items-center space-x-4">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.href}
+                className={`relative text-sm font-medium transition-all duration-300 hover:scale-105 ${
+                  location.pathname === item.href 
+                    ? 'text-primary' 
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                {item.name}
+                {location.pathname === item.href && (
+                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full animate-pulse" />
+                )}
+              </Link>
+            ))}
+
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="h-10 w-10">
-                  <Settings className="h-5 w-5" />
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  className="h-9 w-9 rounded-full hover:bg-muted transition-colors"
+                >
+                  <Settings className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
               <SettingsDropdown />
             </DropdownMenu>
-
-            <div className="flex items-center space-x-1">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`font-mono text-sm transition-all duration-300 relative group px-4 py-2.5 rounded-md border border-transparent hover:border-primary/30 hover:shadow-sm ${
-                    location.pathname === item.href 
-                      ? 'text-primary border-primary/50 bg-gradient-to-r from-primary/10 to-primary/5 shadow-md' 
-                      : 'text-foreground hover:text-primary hover:bg-gradient-to-r hover:from-primary/8 hover:to-primary/3'
-                  }`}
-                >
-                  <span className="relative z-10">{item.name}</span>
-                  <span className={`absolute bottom-1 left-4 right-4 h-0.5 bg-gradient-to-r from-primary to-primary/60 transition-all duration-300 ${
-                    location.pathname === item.href ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'
-                  }`}></span>
-                  <div className={`absolute inset-0 rounded-md bg-gradient-to-r from-primary/5 to-primary/10 transition-all duration-300 ${
-                    location.pathname === item.href ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
-                  }`}></div>
-                </Link>
-              ))}
-            </div>
           </div>
 
-          <div className="md:hidden flex items-center space-x-2">
+          {/* Mobile Menu */}
+          <div className="md:hidden flex items-center space-x-3">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button className="inline-flex items-center justify-center rounded-md text-foreground hover:text-primary transition-colors duration-300 h-10 w-10">
-                  <Settings className="h-6 w-6" />
-                </button>
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  className="h-9 w-9 rounded-full hover:bg-muted transition-colors"
+                >
+                  <Settings className="h-4 w-4" />
+                </Button>
               </DropdownMenuTrigger>
               <SettingsDropdown isMobile />
             </DropdownMenu>
 
-            <div
+            {/* Mobile Menu Button */}
+            <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="flex items-center justify-center text-foreground hover:text-primary transition-colors duration-300 h-10 w-10 group cursor-pointer"
+              className="flex items-center justify-center text-foreground hover:text-primary transition-colors h-9 w-9"
             >
-              <div className="w-6 h-6 relative flex flex-col justify-center items-center">
+              <div className="w-5 h-5 relative flex flex-col justify-center items-center">
                 <span
-                  className={`block absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out ${
-                    isMenuOpen ? 'rotate-45 translate-y-0' : '-translate-y-2'
-                  } group-hover:bg-primary`}
+                  className={`block absolute h-0.5 w-5 bg-current transition-all duration-300 ${
+                    isMenuOpen ? 'rotate-45 translate-y-0' : '-translate-y-1.5'
+                  } rounded-full`}
                 />
                 <span
-                  className={`block absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out ${
+                  className={`block absolute h-0.5 w-5 bg-current transition-all duration-300 ${
                     isMenuOpen ? 'opacity-0' : 'opacity-100'
-                  } group-hover:bg-primary`}
+                  } rounded-full`}
                 />
                 <span
-                  className={`block absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out ${
-                    isMenuOpen ? '-rotate-45 translate-y-0' : 'translate-y-2'
-                  } group-hover:bg-primary`}
+                  className={`block absolute h-0.5 w-5 bg-current transition-all duration-300 ${
+                    isMenuOpen ? '-rotate-45 translate-y-0' : 'translate-y-1.5'
+                  } rounded-full`}
                 />
               </div>
-            </div>
+            </button>
           </div>
         </div>
 
-        <div className={`md:hidden transition-all duration-500 ease-in-out ${
-          isMenuOpen ? 'max-h-80 opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-2'
+        {/* Enhanced Mobile Menu */}
+        <div className={`md:hidden transition-all duration-300 ease-in-out ${
+          isMenuOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
         } overflow-hidden`}>
-          <div className="px-2 pt-4 pb-6 space-y-2 bg-gradient-to-b from-background to-background/95 border-t border-border/50 backdrop-blur-sm">
-            {navItems.map((item, index) => (
+          <div className="px-2 py-4 space-y-2 bg-background/98 backdrop-blur-sm">
+            {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`font-mono group block px-4 py-4 text-sm transition-all duration-300 rounded-lg border border-transparent hover:border-primary/30 hover:shadow-lg transform hover:-translate-y-0.5 ${
+                className={`group relative flex items-center px-3 py-2 text-sm font-medium transition-all duration-200 ${
                   location.pathname === item.href 
-                    ? 'text-primary border-primary/50 bg-gradient-to-r from-primary/15 to-primary/8 shadow-lg scale-[1.02]' 
-                    : 'text-foreground hover:text-primary hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary/5'
-                }`}
-                style={{
-                  animationDelay: `${index * 50}ms`,
-                  animation: isMenuOpen ? 'fade-in 0.3s ease-out forwards' : 'none'
-                }}
+                    ? 'text-primary bg-primary/10 border-l-2 border-primary max-w-fit' 
+                    : 'text-muted-foreground hover:text-foreground hover:bg-muted/30'
+                } rounded-r-lg`}
               >
-                <div className="flex items-center justify-between">
-                  <span className="relative z-10">{item.name}</span>
-                  <div className={`w-2 h-2 rounded-full bg-primary transition-all duration-300 ${
-                    location.pathname === item.href ? 'opacity-100 scale-100' : 'opacity-0 scale-0 group-hover:opacity-50 group-hover:scale-100'
-                  }`} />
+                <div className="flex items-center space-x-2">
+                  {location.pathname === item.href && (
+                    <div className="w-1 h-1 bg-primary rounded-full"></div>
+                  )}
+                  <span>{item.name}</span>
                 </div>
-                <div className={`absolute bottom-2 left-4 right-4 h-0.5 bg-gradient-to-r from-primary to-primary/60 transition-all duration-300 ${
-                  location.pathname === item.href ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'
-                }`}></div>
               </Link>
             ))}
           </div>
         </div>
       </div>
+      
+      {/* Bottom gradient line */}
+      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-border to-transparent"></div>
+
     </nav>
   );
 };
