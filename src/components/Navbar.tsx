@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Settings, Moon, Sun, Palette, Type, Monitor, Sparkles, Globe } from 'lucide-react';
+import CustomHamburgerMenu from './CustomHamburgerMenu';
 import { 
   DropdownMenu, 
   DropdownMenuContent, 
@@ -120,6 +121,7 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'My Portfolio', href: '/portfolio' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Start A Project', href: '/start-project' },
     { name: 'About Me', href: '/about' },
   ];
@@ -378,7 +380,7 @@ const Navbar = () => {
                   size="icon" 
                   className="h-9 w-9 rounded-full hover:bg-muted transition-colors"
                 >
-                  <Settings className="h-4 w-4" />
+                  <Settings className="h-4 w-4 text-primary" />
                 </Button>
               </DropdownMenuTrigger>
               <SettingsDropdown />
@@ -394,35 +396,16 @@ const Navbar = () => {
                   size="icon" 
                   className="h-9 w-9 rounded-full hover:bg-muted transition-colors"
                 >
-                  <Settings className="h-4 w-4" />
+                  <Settings className="h-4 w-4 text-primary" />
                 </Button>
               </DropdownMenuTrigger>
               <SettingsDropdown isMobile />
             </DropdownMenu>
 
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="flex items-center justify-center text-foreground hover:text-primary transition-colors h-9 w-9"
-            >
-              <div className="w-5 h-5 relative flex flex-col justify-center items-center">
-                <span
-                  className={`block absolute h-0.5 w-5 bg-current transition-all duration-300 ${
-                    isMenuOpen ? 'rotate-45 translate-y-0' : '-translate-y-1.5'
-                  } rounded-full`}
-                />
-                <span
-                  className={`block absolute h-0.5 w-5 bg-current transition-all duration-300 ${
-                    isMenuOpen ? 'opacity-0' : 'opacity-100'
-                  } rounded-full`}
-                />
-                <span
-                  className={`block absolute h-0.5 w-5 bg-current transition-all duration-300 ${
-                    isMenuOpen ? '-rotate-45 translate-y-0' : 'translate-y-1.5'
-                  } rounded-full`}
-                />
-              </div>
-            </button>
+            <CustomHamburgerMenu 
+              isOpen={isMenuOpen} 
+              onClick={() => setIsMenuOpen(!isMenuOpen)} 
+            />
           </div>
         </div>
 
