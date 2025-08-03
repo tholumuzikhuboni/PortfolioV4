@@ -71,7 +71,7 @@ const GetInTouch = () => {
                 </div>
                 
                 <h3 className="text-2xl font-bold text-foreground mb-4">
-                  Let's Build Something Amazing
+                  Let's Build Something
                 </h3>
                 
                 <p className="text-muted-foreground mb-6 leading-relaxed">
